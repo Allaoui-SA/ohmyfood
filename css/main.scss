@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&family=Shrikhand&display=swap');
 
 @import "normalize.css";
 
@@ -9,6 +9,7 @@ $tertiaire: #99E2D0;
 $noir: #353535;
 $gris: #EAEAEA;
 $gris-light: #F7F7F7;
+$gris-heavy: #7E7E7E;
 $blanc: #fff;
 
 * {
@@ -76,6 +77,9 @@ header {
 		section {
 			padding: 40px 20px;
 			background: $gris-light;
+			h1 {
+				font-weight: 900;
+			}
 			button {
 				height: 45px;
 				padding: 0 20px;
@@ -83,25 +87,109 @@ header {
 				box-shadow: 0px 5px 10px rgba(53, 53, 53, 0.25);
 				border: none;
 				border-radius: 40px;
+				font-size: .8rem;
 				color: $blanc;
 			}
 		}
 	}
 }
 
-.fonctionnement {
-	padding: 40px 15px;
+section {
+	padding: 40px 20px;
 	h2 {
 		margin-bottom: 30px;
 	}
-	button {
-		width: 100%;
-		height: 65px;
-		margin-bottom: 20px;
-		border: none;
-		border-radius: 20px;
-		box-shadow: 0px 5px 10px rgba(53, 53, 53, 0.25);
-		font-weight: bold;
+	&.fonctionnement {
+		button {
+			width: calc(100% - 20px) ;
+			height: 65px;
+			position: relative;
+			margin-bottom: 20px;
+			margin-left: 20px;
+			border: none;
+			border-radius: 20px;
+			box-shadow: 0px 5px 10px rgba(53, 53, 53, 0.25);
+			font-size: .8rem;
+			font-weight: bold;
+			text-align: left;
+			padding-left: 30px;
+			transition: .4s ease;
+			i {
+				font-size: 15px;
+				padding-right: 20px;
+				color: $gris-heavy;
+				transition: .4s ease;
+			}
+			&:hover {
+				background-color: $primaire-light;
+				color: $noir;
+				i {
+					color: $primaire;
+				}
+			}
+			&:before {
+				content: "";
+				width: 30px;
+				height: 30px;
+				position: absolute;
+				background: #9356DC;
+				border-radius: 50%;
+				color: $blanc;
+				left: -15px;
+				top: calc( 50% - 15px);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			&:nth-child(2):before {
+				content: "1";
+			}
+			&:nth-child(3):before {
+				content: "2";
+			}
+			&:nth-child(4):before {
+				content: "3";
+			}
+		}
+	}
+	&.restaurants {
+		background: $gris-light;
+		.card {
+			margin-bottom: 30px;
+			background: $blanc;
+			border-radius: 15px;
+			box-shadow: 0px 2px 20px rgba(53, 53, 53, 0.25);
+			img {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+				border-radius: 15px 15px 0 0;
+			}
+			div {
+				padding: 15px;
+				position: relative;
+				h3 {
+					&:first-letter {
+					text-transform: capitalize;
+					}
+				}
+				p {
+					margin: 5px 0;
+					text-transform: capitalize;
+				}
+				button {
+					padding: 0;
+					position: absolute;
+					right: 15px;
+					top: calc( 50% - 12.5px);
+					background: transparent;
+					border: none;
+					i {
+						font-size: 25px;
+					}
+				}
+			}
+		}
 	}
 }
 
