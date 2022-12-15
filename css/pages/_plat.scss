@@ -1,0 +1,119 @@
+.header--plat {
+    div {
+        background: $blanc;
+        padding: 0 20px;
+        position: relative;
+        button {
+            position: absolute;
+            left: 20px;
+            i {
+                font-size: 20px;
+            }
+        }
+        a {
+            box-shadow: none;
+        }
+    }
+}
+.main--plat {
+    position: relative;
+    z-index: 1;
+    background-color: $blanc;
+    border-radius: 50px 50px 0 0;
+    margin-top: -60px;
+    h1 {
+        position: relative;
+        padding: 30px 20px 0 20px;
+        font-size: 2rem;
+        font-family: 'Shrikhand', cursive;
+        &:first-letter {
+            text-transform: capitalize;
+        }
+        label.btn {
+            margin: 2px 20px 0 0;
+        }
+    }
+    h2 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        &.categorie__titre {
+            &::after {
+                content: "";
+                display: block;
+                width: 50px;
+                height: 3px;
+                margin-top: 5px;
+                background: $tertiaire;
+            }   
+        }
+    }
+    h3::first-letter {
+        text-transform: capitalize;
+    }
+    .categorie {
+        .menu--item {
+            position: relative;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 15px;
+            border-radius: 20px;
+            box-shadow: 0px 5px 15px rgb(53 53 53 / 25%);
+            &__titre {
+                width: 100%;
+            }
+            p {
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+            &__prix {
+                margin-right: 10px;
+                font-weight: 600;
+                transition: .5s ease;
+            }
+            &__check {
+                position: absolute;
+                right: 0;
+                z-index: 1;
+                font-size: 1.5rem;
+                color: $blanc;
+                opacity: 0;
+                transform: rotate(180deg);
+                transition: .5s ease;
+            }
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+            &::after {
+                content: "";
+                display: inline-block;
+                width: 0;
+                height: 100%;
+                position: absolute;
+                right: 0;
+                border-radius: 0 20px 20px 0;
+                background-color: $tertiaire;
+                opacity: 0;
+                transition: .5s ease;
+
+            }
+            &:hover {
+                cursor: pointer;
+                .menu--item {
+                    &__prix {
+                        transform: translateX(-50px);
+                    }
+                    &__check {
+                        right: 20px;
+                        opacity: 1;
+                        transform: rotate(0deg);
+                    }
+                }
+                &::after {
+                    width: 60px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

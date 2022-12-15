@@ -1,0 +1,105 @@
+.btnControl {
+    display: none;
+}
+
+
+
+button {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+.btn--submit {
+    width: 150px;
+    height: 45px;
+    margin: auto;
+    padding: 0 20px;
+    background: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
+    box-shadow: 0px 5px 10px rgba(53, 53, 53, 0.25);
+    border: none;
+    border-radius: 40px;
+    font-size: .8rem;
+    color: $blanc;
+}
+.fonctionnement button {
+    width: calc(100% - 20px) ;
+    height: 65px;
+    position: relative;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px rgba(53, 53, 53, 0.25);
+    font-size: .8rem;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 30px;
+    transition: .4s ease;
+    i {
+        font-size: 15px;
+        padding-right: 20px;
+        color: $gris-heavy;
+        transition: .4s ease;
+    }
+    &:hover {
+        background-color: $primaire-light;
+        color: $noir;
+        cursor: pointer;
+        i {
+            color: $primaire;
+        }
+    }
+    &:before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        background: #9356DC;
+        border-radius: 50%;
+        color: $blanc;
+        left: -15px;
+        top: calc( 50% - 15px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &:nth-child(2):before {
+        content: "1";
+    }
+    &:nth-child(3):before {
+        content: "2";
+    }
+    &:nth-child(4):before {
+        content: "3";
+    }
+}
+
+label.btn {
+    position: absolute;
+    right: 15px;
+    top: calc( 50% - 12.5px);
+    border: none;
+    transition: .2s ease;
+    i {
+        font-size: 25px;
+        &.fa-solid {
+            background: linear-gradient(192.72deg, #9356DC 39.68%, #FF79DA 90.79%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: none;
+        }
+    }
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.3);
+    }
+}
+
+.btnControl:checked + label i {
+    &.fa-regular {
+        display: none;
+    }
+    &.fa-solid {
+        display: inline-block;
+    }
+}

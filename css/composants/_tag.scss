@@ -1,0 +1,12 @@
+.card__tag {
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: $tertiaire;
+    color: $tertiaire-heavy;
+    padding: 5px 10px;
+    border-radius: 2px;
+    text-transform: capitalize;
+    font-weight: bold;
+}

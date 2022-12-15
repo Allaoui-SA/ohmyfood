@@ -1,0 +1,21 @@
+footer {
+	margin-top: 50px;
+	padding: 20px;
+	background: $noir;
+	color: $blanc;
+	.logo--footer {
+		width: 100px;
+	}
+	ul {
+		padding: 0;
+		li {
+			list-style-type: none;
+			margin-bottom: 10px;
+			i {
+				font-size: small;
+				margin-right: 10px;
+			}
+		}
+	}
+
+}
