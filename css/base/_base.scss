@@ -20,4 +20,9 @@ html {
 	h1, h2 {
 		font-size: 1.4rem;
 	}
+	
+	a:-webkit-any-link {
+		color: unset;
+		text-decoration: unset;
+	}
 }

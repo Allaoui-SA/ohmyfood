@@ -1,10 +1,11 @@
 @import "./utils/fonts";
 @import "./utils/variables";
+@import "./utils/mixins";
 @import "./base/base";
+@import "./composants/loader";
 @import "./composants/buttons";
 @import "./composants/tag";
 @import "./layout/header";
 @import "./layout/footer";
 @import "./pages/home";
 @import "./pages/plat";
-@import "./utils/mixins";

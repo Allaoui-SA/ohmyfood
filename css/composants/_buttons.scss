@@ -8,35 +8,38 @@ button {
     background: transparent;
     border: none;
     padding: 0;
+    &:hover {
+        cursor: pointer;
+    }
 }
 .btn--submit {
-    width: 150px;
-    height: 45px;
+    width: 225px;
     margin: auto;
-    padding: 0 20px;
-    background: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
+    margin-top: 10px;
+    padding: 15px 0;
+    background: linear-gradient(180deg, #FF79DA -10%, #9356DC 100%);
     box-shadow: 0px 5px 10px rgba(53, 53, 53, 0.25);
     border: none;
     border-radius: 40px;
-    font-size: .8rem;
+    font-size: 1rem;
     color: $blanc;
 }
 .fonctionnement button {
     width: calc(100% - 20px) ;
-    height: 65px;
+    height: 75px;
     position: relative;
     margin-bottom: 20px;
     margin-left: 20px;
     border: none;
     border-radius: 20px;
     box-shadow: 0px 5px 10px rgba(53, 53, 53, 0.25);
-    font-size: .8rem;
+    font-size: 17px;
     font-weight: bold;
     text-align: left;
     padding-left: 30px;
     transition: .4s ease;
     i {
-        font-size: 15px;
+        font-size: 17px;
         padding-right: 20px;
         color: $gris-heavy;
         transition: .4s ease;
@@ -44,7 +47,6 @@ button {
     &:hover {
         background-color: $primaire-light;
         color: $noir;
-        cursor: pointer;
         i {
             color: $primaire;
         }
