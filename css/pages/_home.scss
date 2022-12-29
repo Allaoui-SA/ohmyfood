@@ -1,13 +1,15 @@
 section {
 	padding: 40px 20px;
+	flex-wrap: wrap;
 	h2 {
 		margin-bottom: 30px;
+		width: 100%;
 	}
 	&.restaurants {
 		background: $gris-light;
 		.card {
-			display: block;
-            position: relative;
+			width: 100%;
+			position: relative;
 			margin-bottom: 30px;
 			background: $blanc;
 			border-radius: 15px;
@@ -21,7 +23,8 @@ section {
 			}
 			div {
 				padding: 15px;
-				position: relative;
+				top: 71%;
+				
 				h3 {
 					&:first-letter {
 					text-transform: capitalize;
@@ -31,9 +34,6 @@ section {
 					margin: 5px 0;
 					text-transform: capitalize;
 				}
-			}
-			&:hover {
-				transform: translateY(-5px);
 			}
 		}
 	}
