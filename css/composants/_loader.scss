@@ -1,0 +1,101 @@
+.noscroll {
+    animation: noscroll 0s linear 1;
+    animation-delay: 3.2s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+}
+@keyframes noscroll {
+    0% {
+        overflow: auto;
+    }
+    100% {
+        overflow: auto;
+    }
+}
+
+.circle{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: $primaire;
+    border-radius: 50%;
+    animation: loading 1.5s cubic-bezier(.8, .5, .2, 1.4) 2 ;
+    transform-origin: bottom center;
+    position: relative;
+}
+@keyframes loading {
+    0%{
+        transform: translateY(0px);
+        background-color: $primaire;
+    }
+    50%{
+        transform: translateY(50px);
+        background-color: $secondaire;
+    }
+    100%{
+        transform: translateY(0px);
+        background-color: $primaire;
+    }
+}
+.circle-1{
+    animation-delay: 0.1s;
+}
+.circle-2{
+    animation-delay: 0.2s;
+}
+.circle-3{
+    animation-delay: 0.3s;
+}
+.circle-4{
+    animation-delay: 0.4s;
+}
+
+.loader{
+    position:fixed;
+    top:50%;
+    left:50%;
+    z-index: 99;
+    width: 100%;
+    height: 100vh;
+    background: $blanc;
+    transform:translate(-50%, -50%);
+    animation: endloading 1s linear 1;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes endloading {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        z-index: -99;
+    }
+}
+.categorie {
+    animation: lazy 1s ease 1;
+    animation-fill-mode: forwards;
+    transform: translateY(25px);
+    opacity: 0;
+    height: 0;
+
+}
+@keyframes lazy {
+    100% {
+        height: auto;
+        transform: translateY(-25px);
+        opacity: 1;
+    }
+}
+.categorie {
+    &--entrees {
+        animation-delay: 2s;
+    }
+    &--plats {
+        animation-delay: 4s;
+    }
+    &--desserts {
+        height: auto;
+        animation-delay: 6s;
+    }
+}

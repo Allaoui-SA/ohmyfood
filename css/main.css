@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&family=Shrikhand&display=swap");
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -8,7 +14,6 @@ html {
   font-family: "Roboto", sans-serif;
 }
 html body {
-  max-width: 425px;
   background: #fff;
   margin: auto;
 }
@@ -17,6 +22,115 @@ html h1, html h2, html h3, html h4, html h5, html h6 {
 }
 html h1, html h2 {
   font-size: 1.4rem;
+}
+html a:-webkit-any-link {
+  color: unset;
+  text-decoration: unset;
+}
+
+.noscroll {
+  animation: noscroll 0s linear 1;
+  animation-delay: 3.2s;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+}
+
+@keyframes noscroll {
+  0% {
+    overflow: auto;
+  }
+  100% {
+    overflow: auto;
+  }
+}
+.circle {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: #9356DC;
+  border-radius: 50%;
+  animation: loading 1.5s cubic-bezier(0.8, 0.5, 0.2, 1.4) 2;
+  transform-origin: bottom center;
+  position: relative;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateY(0px);
+    background-color: #9356DC;
+  }
+  50% {
+    transform: translateY(50px);
+    background-color: #FF79DA;
+  }
+  100% {
+    transform: translateY(0px);
+    background-color: #9356DC;
+  }
+}
+.circle-1 {
+  animation-delay: 0.1s;
+}
+
+.circle-2 {
+  animation-delay: 0.2s;
+}
+
+.circle-3 {
+  animation-delay: 0.3s;
+}
+
+.circle-4 {
+  animation-delay: 0.4s;
+}
+
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 99;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  animation: endloading 1s linear 1;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes endloading {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -99;
+  }
+}
+.categorie {
+  animation: lazy 1s ease 1;
+  animation-fill-mode: forwards;
+  transform: translateY(25px);
+  opacity: 0;
+  height: 0;
+}
+
+@keyframes lazy {
+  100% {
+    height: auto;
+    transform: translateY(-25px);
+    opacity: 1;
+  }
+}
+.categorie--entrees {
+  animation-delay: 2s;
+}
+.categorie--plats {
+  animation-delay: 4s;
+}
+.categorie--desserts {
+  height: auto;
+  animation-delay: 6s;
 }
 
 .btnControl {
@@ -28,37 +142,40 @@ button {
   border: none;
   padding: 0;
 }
+button:hover {
+  cursor: pointer;
+}
 
 .btn--submit {
-  width: 150px;
-  height: 45px;
+  width: 225px;
   margin: auto;
-  padding: 0 20px;
-  background: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
+  margin-top: 10px;
+  padding: 15px 0;
+  background: linear-gradient(180deg, #FF79DA -10%, #9356DC 100%);
   box-shadow: 0px 5px 10px rgba(53, 53, 53, 0.25);
   border: none;
   border-radius: 40px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #fff;
 }
 
 .fonctionnement button {
   width: calc(100% - 20px);
-  height: 65px;
+  height: 75px;
   position: relative;
   margin-bottom: 20px;
   margin-left: 20px;
   border: none;
   border-radius: 20px;
   box-shadow: 0px 5px 10px rgba(53, 53, 53, 0.25);
-  font-size: 0.8rem;
+  font-size: 17px;
   font-weight: bold;
   text-align: left;
   padding-left: 30px;
   transition: 0.4s ease;
 }
 .fonctionnement button i {
-  font-size: 15px;
+  font-size: 17px;
   padding-right: 20px;
   color: #7E7E7E;
   transition: 0.4s ease;
@@ -66,7 +183,6 @@ button {
 .fonctionnement button:hover {
   background-color: #F5EDFF;
   color: #353535;
-  cursor: pointer;
 }
 .fonctionnement button:hover i {
   color: #9356DC;
@@ -95,31 +211,34 @@ button {
   content: "3";
 }
 
-label.btn {
+div.btn {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   position: absolute;
   right: 15px;
   top: calc(50% - 12.5px);
   border: none;
   transition: 0.2s ease;
 }
-label.btn i {
+div.btn i {
   font-size: 25px;
 }
-label.btn i.fa-solid {
+div.btn i.fa-solid {
   background: linear-gradient(192.72deg, #9356DC 39.68%, #FF79DA 90.79%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: none;
 }
-label.btn:hover {
+div.btn:hover {
   cursor: pointer;
   transform: scale(1.3);
 }
-
-.btnControl:checked + label i.fa-regular {
+div.btn:hover .fa-regular {
   display: none;
 }
-.btnControl:checked + label i.fa-solid {
+div.btn:hover .fa-solid {
   display: inline-block;
 }
 
@@ -197,19 +316,23 @@ footer ul li i {
 
 section {
   padding: 40px 20px;
+  flex-wrap: wrap;
 }
 section h2 {
   margin-bottom: 30px;
+  width: 100%;
 }
 section.restaurants {
   background: #F7F7F7;
 }
 section.restaurants .card {
+  width: 100%;
   position: relative;
   margin-bottom: 30px;
   background: #fff;
   border-radius: 15px;
   box-shadow: 0px 2px 20px rgba(53, 53, 53, 0.25);
+  transition: 0.5s ease;
 }
 section.restaurants .card img {
   width: 100%;
@@ -219,7 +342,7 @@ section.restaurants .card img {
 }
 section.restaurants .card div {
   padding: 15px;
-  position: relative;
+  top: 71%;
 }
 section.restaurants .card div h3:first-letter {
   text-transform: capitalize;
@@ -243,6 +366,11 @@ section.restaurants .card div p {
 }
 .header--plat div a {
   box-shadow: none;
+}
+.header--plat img {
+  max-height: 300px;
+  object-fit: cover;
+  object-position: left 60%;
 }
 
 .main--plat {
@@ -341,10 +469,52 @@ section.restaurants .card div p {
   opacity: 1;
 }
 
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media screen and (min-width: 576px) {
+  html body section, html body footer {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+@media screen and (min-width: 768px) {
+  html body section.restaurants {
+    gap: 2%;
+  }
+  html body section.restaurants .card {
+    width: 49%;
+  }
+  html body .main--plat {
+    max-width: 668px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  html body .main--plat h1 {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  html body .main--plat h1 div.btn {
+    right: 80px;
+  }
+  html body .main--plat .categorie {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 992px) {
+  html body section.fonctionnement {
+    justify-content: flex-start;
+    column-gap: 30px;
+  }
+  html body section.fonctionnement button {
+    max-width: 350px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  html body section.restaurants {
+    justify-content: space-between;
+  }
+  html body section.restaurants .card {
+    width: 23%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
