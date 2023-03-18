@@ -211,7 +211,8 @@ button:hover {
   content: "3";
 }
 
-div.btn {
+span.btn {
+  display: block;
   width: -moz-fit-content;
   width: fit-content;
   height: -moz-fit-content;
@@ -222,23 +223,23 @@ div.btn {
   border: none;
   transition: 0.2s ease;
 }
-div.btn i {
+span.btn i {
   font-size: 25px;
 }
-div.btn i.fa-solid {
+span.btn i.fa-solid {
   background: linear-gradient(192.72deg, #9356DC 39.68%, #FF79DA 90.79%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: none;
 }
-div.btn:hover {
+span.btn:hover {
   cursor: pointer;
   transform: scale(1.3);
 }
-div.btn:hover .fa-regular {
+span.btn:hover .fa-regular {
   display: none;
 }
-div.btn:hover .fa-solid {
+span.btn:hover .fa-solid {
   display: inline-block;
 }
 
@@ -357,12 +358,14 @@ section.restaurants .card div p {
   padding: 0 20px;
   position: relative;
 }
-.header--plat div button {
+.header--plat div .fa-arrow-left {
   position: absolute;
   left: 20px;
+  top: 20px;
+  font-size: 24px;
 }
-.header--plat div button i {
-  font-size: 20px;
+.header--plat div .fa-arrow-left i {
+  
 }
 .header--plat div a {
   box-shadow: none;
