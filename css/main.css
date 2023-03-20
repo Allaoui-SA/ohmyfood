@@ -168,15 +168,15 @@ button:hover {
   border: none;
   border-radius: 20px;
   box-shadow: 0px 5px 10px rgba(53, 53, 53, 0.25);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
   text-align: left;
-  padding-left: 30px;
+  padding-left: 26px;
   transition: 0.4s ease;
 }
 .fonctionnement button i {
-  font-size: 17px;
-  padding-right: 20px;
+  font-size: 16px;
+  padding-right: 16px;
   color: #7E7E7E;
   transition: 0.4s ease;
 }
@@ -223,6 +223,7 @@ span.btn {
   border: none;
   transition: 0.2s ease;
 }
+
 span.btn i {
   font-size: 25px;
 }
@@ -341,7 +342,7 @@ section.restaurants .card img {
   object-fit: cover;
   border-radius: 15px 15px 0 0;
 }
-section.restaurants .card div {
+section.restaurants .card div, section.restaurants .card span.btn  {
   padding: 15px;
   top: 71%;
 }
@@ -426,6 +427,12 @@ section.restaurants .card div p {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+.main--plat .categorie .menu--item__ingredients {
+  max-width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .main--plat .categorie .menu--item__prix {
   margin-right: 10px;
   font-weight: 600;
@@ -494,7 +501,7 @@ section.restaurants .card div p {
     padding-left: 80px;
     padding-right: 80px;
   }
-  html body .main--plat h1 div.btn {
+  html body .main--plat h1 span.btn {
     right: 80px;
   }
   html body .main--plat .categorie {
